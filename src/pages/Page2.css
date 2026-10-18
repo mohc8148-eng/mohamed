@@ -1,0 +1,92 @@
+.signin-page {
+  --coffee: #3d271e;
+  --coffee-deep: #281912;
+  --caramel: #bd8053;
+  --ink: #29231f;
+  --muted: #8c837c;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  background: #fbfaf8;
+  color: var(--ink);
+  text-align: left;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+}
+
+#root:has(.signin-page) {
+  width: 100%;
+  border: 0;
+  text-align: left;
+}
+
+.signin-showcase {
+  position: relative;
+  overflow: hidden;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(34px, 5vw, 72px);
+  color: #fff9f2;
+  background: radial-gradient(ellipse at 80% 65%, #79533b 0%, transparent 42%), linear-gradient(145deg, #563b2d 0%, var(--coffee) 53%, var(--coffee-deep) 100%);
+}
+
+.showcase-grain { position: absolute; inset: 0; opacity: .13; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"); }
+.brand-lockup, .signin-mobile-brand { position: relative; z-index: 1; display: flex; align-items: center; gap: 13px; }
+.brand-mark { width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid rgba(255, 244, 230, .55); border-radius: 15px 15px 15px 4px; color: #f6d7b7; font: 700 30px/1 Georgia, serif; }
+.brand-copy { display: grid; gap: 1px; }
+.brand-copy strong { font: 600 19px/1.2 Georgia, serif; letter-spacing: .2px; }
+.brand-copy > span { font-size: 8px; letter-spacing: 2px; opacity: .72; }
+.showcase-message { position: relative; z-index: 1; max-width: 510px; margin: 0 0 18px; }
+.eyebrow, .welcome-label { font-size: 10px; font-weight: 700; letter-spacing: 2.2px; }
+.eyebrow { color: #d7ad89; }
+.showcase-message h1 { margin: 18px 0 16px; color: #fff9f2; font: 500 clamp(38px, 4vw, 57px)/1.08 Georgia, serif; letter-spacing: -1.5px; }
+.showcase-message p { color: rgba(255, 249, 242, .69); font-size: 14px; }
+.showcase-footer { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; color: rgba(255, 249, 242, .62); font-size: 11px; }
+.footer-dot { width: 6px; height: 6px; background: #d8a174; border-radius: 50%; }
+.sun-orbit { position: absolute; width: 290px; height: 290px; border: 1px solid rgba(237, 193, 154, .13); border-radius: 50%; right: -132px; top: 35%; }
+.sun-orbit::before, .sun-orbit::after { content: ''; position: absolute; border: 1px solid rgba(237, 193, 154, .11); border-radius: 50%; }
+.sun-orbit::before { inset: 24px; }.sun-orbit::after { inset: 54px; }
+.sun-orbit span { position: absolute; width: 88px; height: 88px; top: 84px; left: 68px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #d3a27a, #81583e 72%); box-shadow: 0 0 55px rgba(211, 162, 122, .19); }
+
+.signin-panel { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 32px 28px; box-sizing: border-box; }
+.signin-card { width: min(100%, 390px); }
+.welcome-label { color: var(--caramel); }
+.signin-card h2 { margin: 14px 0 7px; color: #302721; font: 500 30px/1.2 Georgia, serif; letter-spacing: -.6px; }
+.signin-intro { color: var(--muted); font-size: 13px; margin-bottom: 34px; }
+.signin-card form { display: flex; flex-direction: column; }
+.signin-card form > label, .password-label-row label { margin-bottom: 8px; color: #514941; font-size: 12px; font-weight: 600; }
+.signin-card input[type="text"], .signin-card input[type="email"], .signin-card input[type="password"] { height: 48px; padding: 0 14px; margin-bottom: 6px; border: 1px solid #e4ded8; border-radius: 7px; outline: none; background: #fff; color: #29231f; font: 13px 'DM Sans', 'Segoe UI', sans-serif; transition: border-color .18s, box-shadow .18s; }
+.signin-card input::placeholder { color: #b1aaa3; }
+.signin-card input[type="text"]:focus, .signin-card input[type="email"]:focus, .signin-card input[type="password"]:focus { border-color: #b77b52; box-shadow: 0 0 0 3px rgba(183, 123, 82, .12); }
+.password-label-row { display: flex; align-items: center; justify-content: space-between; }
+.password-label-row a, .signin-help a { color: #a66943; text-decoration: none; font-size: 11px; font-weight: 600; }
+.remember-option { display: flex; align-items: center; gap: 8px; margin: -1px 0 24px; color: #70675f; font-size: 12px; cursor: pointer; }
+.remember-option input { width: 15px; height: 15px; margin: 0; accent-color: #85563a; }
+.signin-button { height: 49px; padding: 0 17px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 7px; background: #493126; color: #fff9f2; font: 600 13px 'DM Sans', 'Segoe UI', sans-serif; cursor: pointer; transition: background .18s, transform .18s; }
+.signin-button:hover { background: #63432f; transform: translateY(-1px); }
+.signin-button span { font-size: 18px; line-height: 1; }
+.signin-help { margin-top: 25px; text-align: center; color: #938a82; font-size: 11px; }
+.signin-help a { margin-left: 3px; }
+.auth-switch { margin-top: 20px; text-align: center; color: #938a82; font-size: 12px; }
+.auth-switch a { color: #a66943; font-weight: 600; text-decoration: none; }
+.panel-legal { margin-top: auto; padding-top: 48px; color: #aaa29a; font-size: 10px; }
+.panel-legal span { padding: 0 5px; color: #c59b7a; }
+.signin-mobile-brand { display: none; }
+
+@media (max-width: 780px) {
+  .signin-page { grid-template-columns: 1fr; }
+  .signin-showcase { display: none; }
+  .signin-panel { min-height: 100svh; justify-content: flex-start; padding: 28px 25px 20px; }
+  .signin-mobile-brand { display: flex; width: min(100%, 390px); margin: 0 auto 64px; color: var(--coffee); }
+  .signin-mobile-brand .brand-mark { border-color: #d8c8ba; color: #80583e; }
+  .signin-card { margin: auto 0; }
+  .panel-legal { margin-top: auto; padding-top: 35px; }
+}
+
+@media (max-width: 420px) {
+  .signin-panel { padding-inline: 21px; }
+  .signin-mobile-brand { margin-bottom: 44px; }
+  .signin-card h2 { font-size: 27px; }
+}
